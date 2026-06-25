@@ -519,6 +519,23 @@
 </head>
 <body>
 
+<div id="loading-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:99999;color:#fff;font-size:16px;">
+  <div style="font-size:40px;margin-bottom:20px;">🎂</div>
+  <div>加载中...</div>
+  <div id="loading-progress" style="margin-top:10px;color:#a855f7;">0%</div>
+</div>
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('loading-overlay').style.opacity = '0';
+    setTimeout(function() {
+      document.getElementById('loading-overlay').style.display = 'none';
+    }, 500);
+  }, 500);
+});
+</script>
+
+
 <!-- 音乐控制 -->
 <div id="music-bar">
   <span class="music-note">🎵</span>
